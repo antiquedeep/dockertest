@@ -1,0 +1,12 @@
+Types of volumes
+  Named Volume: These are the docker manage volume with specific user defined name that docker handles the creations and the storage location is on the host typically within the system
+        path: /var/lib/docker/<volume-name>/_data
+        cmd: docker volum create <volume-name>
+        example: docker run -itd --name myapp -v <volume-name>:/app ubuntu
+
+ Bind Mounts: It is a another way to give your containers access to files and folders on your host. Its typically your host directory that you directly mount to your container
+     mkdir app --> :/app any changes that you do in your systems app directory that directly reflects in the container directory
+         1) creat directory -- any name -- changes
+         2) docker container run -it -- name test -v /champu/:/app ubuntu
+Anonymous volume: No mount point and host path needed its temp volume that create
+    example: docker run -v /salman -- randomid
